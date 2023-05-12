@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SanPhamController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/home', function () {
-    return view('CustomerInterface/index');
-})->name('home');
+Route::get('/home', [ProductController::class, "index"])->name('home');
 Route::get('shop', function () {
     return view('CustomerInterface/shop-grid');
 })->name('shop'); 
