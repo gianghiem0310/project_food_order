@@ -18,9 +18,7 @@ Route::get('/home', [ProductController::class, "index"])->name('home');
 Route::get('shop', function () {
     return view('CustomerInterface/shop-grid');
 })->name('shop'); 
-Route::get('detail', function () {
-    return view('CustomerInterface/shop-details');
-})->name('detail'); 
+Route::get('detail', [ProductController::class, 'getProductByID'])->name('detail');
 Route::get('cart', function () {
     return view('CustomerInterface/shoping-cart');
 })->name('cart'); 

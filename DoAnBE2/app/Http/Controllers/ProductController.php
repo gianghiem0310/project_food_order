@@ -16,6 +16,12 @@ class ProductController extends Controller
         return view('CustomerInterface/index', ['sanpham'=>$sanpham]);
     }
 
+
+    public function getProductByID(Request $request){
+        $sanpham = Product::find($request->id);
+        return view('CustomerInterface/shop-details', ['sanpham'=>$sanpham]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
